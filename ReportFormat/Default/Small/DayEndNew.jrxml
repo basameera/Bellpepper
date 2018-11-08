@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2018-08-30T21:09:51 -->
+<!-- 2018-11-08T12:15:24 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DayEnd" pageWidth="210" pageHeight="800" columnWidth="190" leftMargin="20" rightMargin="0" topMargin="10" bottomMargin="10" isFloatColumnFooter="true" uuid="ae367ef6-0589-45ca-9ab6-e6207d1b5c19">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
@@ -8,13 +8,13 @@
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
 	<parameter name="total" class="java.lang.String"/>
 	<parameter name="pax" class="java.lang.String"/>
-	<parameter name="food" class="java.lang.String"/>
-	<parameter name="drinks" class="java.lang.String"/>
+	<parameter name="cat1_no" class="java.lang.String"/>
+	<parameter name="cat2_no" class="java.lang.String"/>
 	<parameter name="cardPay" class="java.lang.String"/>
 	<parameter name="cashPay" class="java.lang.String"/>
 	<parameter name="credit" class="java.lang.String"/>
-	<parameter name="foodV" class="java.lang.String"/>
-	<parameter name="drinksV" class="java.lang.String"/>
+	<parameter name="cat1_val" class="java.lang.String"/>
+	<parameter name="cat2_val" class="java.lang.String"/>
 	<parameter name="Service" class="java.lang.String"/>
 	<parameter name="Discount" class="java.lang.String">
 		<parameterDescription><![CDATA[]]></parameterDescription>
@@ -34,6 +34,10 @@
 	<parameter name="balance" class="java.lang.String"/>
 	<parameter name="dayBalance" class="java.lang.String"/>
 	<parameter name="bankAmount" class="java.lang.String"/>
+	<parameter name="cat1_no_name" class="java.lang.String"/>
+	<parameter name="cat2_no_name" class="java.lang.String"/>
+	<parameter name="cat1_val_name" class="java.lang.String"/>
+	<parameter name="cat2_val_name" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -224,15 +228,6 @@
 				<textFieldExpression><![CDATA[$P{cardPay}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="10" y="3" width="60" height="12" uuid="06b5ac63-c3f3-4738-8f68-fa3b307734d4">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8"/>
-				</textElement>
-				<text><![CDATA[Food  ]]></text>
-			</staticText>
-			<staticText>
 				<reportElement x="10" y="87" width="70" height="12" uuid="a12a8b97-f12c-46b2-852d-3c6c5f53daef">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="local_mesure_unitheight" value="pixel"/>
@@ -243,36 +238,25 @@
 				<text><![CDATA[Pax]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="110" y="15" width="65" height="12" uuid="113a89dc-3103-4c87-b867-f84498ff8554">
+				<reportElement x="115" y="15" width="65" height="12" uuid="113a89dc-3103-4c87-b867-f84498ff8554">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{drinks}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{cat2_no}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="110" y="3" width="65" height="12" uuid="16b01155-7784-4d4f-8916-1baabe8462e9">
+				<reportElement x="115" y="3" width="65" height="12" uuid="16b01155-7784-4d4f-8916-1baabe8462e9">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{food}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{cat1_no}]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="10" y="15" width="60" height="12" uuid="22acaa38-1747-4b3f-be4f-788a7d2db529">
-					<property name="local_mesure_unitheight" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8"/>
-				</textElement>
-				<text><![CDATA[Others]]></text>
-			</staticText>
 			<textField>
 				<reportElement x="120" y="87" width="60" height="12" uuid="74ca1ad7-55fe-4fd1-8e52-b21049a66de5">
 					<property name="local_mesure_unitheight" value="pixel"/>
@@ -390,25 +374,6 @@
 				<textFieldExpression><![CDATA[$P{credit}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="10" y="27" width="60" height="12" uuid="6afcff86-3a34-4ee1-9f13-664279677688">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8"/>
-				</textElement>
-				<text><![CDATA[Food Value]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="10" y="39" width="60" height="12" uuid="b3392dba-0e4d-486a-8b30-5ace585734a4">
-					<property name="local_mesure_unitheight" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8"/>
-				</textElement>
-				<text><![CDATA[Others Value]]></text>
-			</staticText>
-			<staticText>
 				<reportElement x="10" y="63" width="60" height="12" uuid="37af2e60-7730-4799-b58f-7bf7790689f9">
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 				</reportElement>
@@ -435,7 +400,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{foodV}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{cat1_val}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="115" y="39" width="65" height="12" uuid="e8dfcc62-08b6-40bc-9cb2-505461b6d6a4">
@@ -446,7 +411,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{drinksV}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{cat2_val}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="115" y="63" width="65" height="12" uuid="661161c5-c25b-4fbd-a87f-fcd12a5c4397">
@@ -988,6 +953,36 @@
 					<pen lineStyle="Dotted"/>
 				</graphicElement>
 			</line>
+			<textField>
+				<reportElement x="10" y="3" width="70" height="12" uuid="fac0bafd-288a-415d-a858-86cdaf7bb2af">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cat1_no_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="15" width="70" height="12" uuid="45d64c38-8fad-403b-8a67-dfa9c69036e7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cat2_no_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="27" width="60" height="12" uuid="5a8dcd93-aada-4c52-8602-dcc02a4e4c7d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cat1_val_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="39" width="60" height="12" uuid="3ebddfbf-f5d8-437a-8134-f9b470584396"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cat2_val_name}]]></textFieldExpression>
+			</textField>
 		</band>
 	</summary>
 </jasperReport>
