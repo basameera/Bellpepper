@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2018-10-27T16:32:47 -->
+<!-- 2018-11-09T17:41:44 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OutstandingBill" pageWidth="430" pageHeight="561" columnWidth="390" leftMargin="20" rightMargin="20" topMargin="6" bottomMargin="6" isFloatColumnFooter="true" uuid="841ffd8a-001b-4419-a3de-c4b2af767d9a">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -33,6 +33,8 @@
 	<parameter name="thankFooter" class="java.lang.String"/>
 	<parameter name="dateFrom" class="java.lang.String"/>
 	<parameter name="dateTo" class="java.lang.String"/>
+	<parameter name="cashGiven" class="java.lang.String"/>
+	<parameter name="balance" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -379,7 +381,7 @@
 		<band splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="120" splitType="Stretch">
+		<band height="145" splitType="Stretch">
 			<line>
 				<reportElement x="20" y="1" width="345" height="1" uuid="908d735e-4e3c-414e-bae9-8fc0f9c3cd84">
 					<property name="local_mesure_unitheight" value="pixel"/>
@@ -460,7 +462,7 @@
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement x="20" y="77" width="345" height="1" uuid="ae7ae556-d825-4805-91a6-d9bca254cda9">
+				<reportElement x="20" y="102" width="345" height="1" uuid="ae7ae556-d825-4805-91a6-d9bca254cda9">
 					<property name="local_mesure_unitheight" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="local_mesure_unitwidth" value="pixel"/>
@@ -539,7 +541,7 @@
 				<text><![CDATA[Outstanding Remaining]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="0" y="94" width="390" height="11" isRemoveLineWhenBlank="true" uuid="0dca597b-ca70-46f1-b43b-a06422421f25">
+				<reportElement x="0" y="119" width="390" height="11" isRemoveLineWhenBlank="true" uuid="0dca597b-ca70-46f1-b43b-a06422421f25">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement textAlignment="Center">
@@ -548,14 +550,14 @@
 				<textFieldExpression><![CDATA[$P{ceymossFooter}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="0" y="105" width="390" height="11" isRemoveLineWhenBlank="true" uuid="e78f9376-06f5-40be-841e-6a1b76481c64"/>
+				<reportElement x="0" y="130" width="390" height="11" isRemoveLineWhenBlank="true" uuid="e78f9376-06f5-40be-841e-6a1b76481c64"/>
 				<textElement textAlignment="Center">
 					<font fontName="Times New Roman" size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{ceymossTel}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="0" y="80" width="390" height="12" isRemoveLineWhenBlank="true" uuid="7d7a915b-3d1d-4706-8e94-160e71db68aa">
+				<reportElement x="0" y="105" width="390" height="12" isRemoveLineWhenBlank="true" uuid="7d7a915b-3d1d-4706-8e94-160e71db68aa">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -563,6 +565,44 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$P{thankFooter}]]></textFieldExpression>
 			</textField>
+			<textField>
+				<reportElement x="260" y="75" width="100" height="12" uuid="3a7fc625-9f0e-457a-869e-9e6f1a73ff7a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cashGiven}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="87" width="100" height="12" uuid="9bc80251-e4c1-4beb-9e0a-5c6b5d451a9b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{balance}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="130" y="75" width="110" height="12" uuid="d144802e-4f75-4702-93ac-2bf3b4f17ab8">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Cash Given]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="87" width="110" height="12" uuid="0969008e-f0c4-4fe2-b10f-66446ef95f55">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Balance]]></text>
+			</staticText>
 		</band>
 	</summary>
 </jasperReport>
