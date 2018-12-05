@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2018-11-08T12:27:05 -->
+<!-- 2018-12-05T10:17:03 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Acknowledgment" pageWidth="210" pageHeight="800" whenNoDataType="NoPages" columnWidth="190" leftMargin="20" rightMargin="0" topMargin="6" bottomMargin="6" isFloatColumnFooter="true" uuid="86aa1c0e-6c07-4bf4-9667-5df527094c04">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="ireport.zoom" value="1.0"/>
@@ -43,6 +43,11 @@
 	<parameter name="ceymossTel" class="java.lang.String"/>
 	<parameter name="thankFooter" class="java.lang.String"/>
 	<parameter name="logoPath" class="java.lang.String"/>
+	<parameter name="rsfName" class="java.lang.String"/>
+	<parameter name="rsfRoom" class="java.lang.String"/>
+	<parameter name="rsfTip" class="java.lang.String"/>
+	<parameter name="rsfSign" class="java.lang.String"/>
+	<parameter name="rsfDots" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -419,7 +424,7 @@
 		<band splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="105" splitType="Stretch">
+		<band height="180" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="3" width="100" height="10" uuid="3f120db4-780f-4709-b941-ad3e88186ab8">
 					<property name="local_mesure_unitheight" value="pixel"/>
@@ -613,6 +618,70 @@
 					<font fontName="Times New Roman" size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{thankFooter}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="103" width="50" height="18" isRemoveLineWhenBlank="true" uuid="0f82c022-e1eb-4a0d-a5c6-c03471043b38"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{rsfName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="121" width="50" height="18" isRemoveLineWhenBlank="true" uuid="10cf0029-5bb3-48ee-a7a7-311e75079601"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{rsfRoom}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="139" width="50" height="18" isRemoveLineWhenBlank="true" uuid="6f8598b6-8952-4958-924b-7808096967ef"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{rsfTip}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="157" width="50" height="18" isRemoveLineWhenBlank="true" uuid="89d3a15b-7886-4502-97df-d7f5ee3c7807"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{rsfSign}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="50" y="103" width="129" height="18" isRemoveLineWhenBlank="true" uuid="0418b11c-db82-4ab8-aba7-6a499fe70fc1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{rsfDots}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="50" y="121" width="129" height="18" isRemoveLineWhenBlank="true" uuid="df37112e-993b-4f39-8106-6623a55479cb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{rsfDots}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="50" y="157" width="129" height="18" isRemoveLineWhenBlank="true" uuid="0b0a0335-8e6c-46a5-ad03-bfa8d02d0901">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{rsfDots}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="50" y="139" width="129" height="18" isRemoveLineWhenBlank="true" uuid="d1aab400-6d7c-4fe6-84bb-c418d5e59a21">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{rsfDots}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>
